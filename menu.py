@@ -34,15 +34,27 @@ def rendeles(mit, db):
 
 
 def szamla():
-    print(f"{'='*15}\n{'SZÁMLA':^15}\n{'='*15}\n")
+    print(f"{Fore.RED}", end="")
+    print(f"\n{'=' * 60}\n{'SZÁMLA':^60}\n{'=' * 60}\n")
+    print(f"{Fore.RESET}", end="")
+    
+    print(f"{'Étel':25}{'Mennyiség':>10}{'Részösszeg':>12}")
+    print(f"{'-' * 50}")
     
     total = 0
     
     for i in range(len(menu_elemek) - 1):
         # print() kajanév   mennyiség   részösszeg
-        pass
+        if menu_elemek[i][1] > 0:
+            etel_nev = menu_elemek[i][0]
+            db = menu_elemek[i][1]
+            resz_osszeg = db  * menu_elemek[i][2]
+            print(f"{etel_nev[3:]:25}{db:>10}{resz_osszeg:>12} Ft")
+            
+            total += resz_osszeg
     
-    print(f"\nFIZETENDŐ ÖSSZEG: {total} Ft")
+    print(f"\n{'-' * 50}")
+    print(f"{Fore.RED}FIZETENDŐ ÖSSZEG: {total} Ft{Fore.RESET}\n")
 
 
 # ---------------------------
