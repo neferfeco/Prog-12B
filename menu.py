@@ -62,29 +62,6 @@ def szamla():
 # PROGRAM
 menu()
 
-valasz = input("Mit szeretnél?: ").strip().upper()
-
-if valasz == "A":
-    db = int(input("Mennyit kér?: "))
-    rendeles("A", db)
-      
-    input("Üss egy billentyűt a folytatáshoz...")
-elif valasz == "B":
-    db = int(input("Mennyit kér?: "))
-    rendeles("B", db)
-    
-    input("Üss egy billentyűt a folytatáshoz...")
-elif valasz == "C":
-    db = int(input("Mennyit kér?: "))
-    rendeles("C", db)
-    
-    input("Üss egy billentyűt a folytatáshoz...")
-elif valasz == "Q":
-    print("Jó étvágyat!")
-    szamla()
-    exit()
-
-
 while True:
     menu()
 
